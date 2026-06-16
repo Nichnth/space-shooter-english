@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter - Endless Wave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startScreen" class="start-screen">
+            <div class="start-content">
+                <h1 class="arcade-title">⚡ SPACE SHOOTER ⚡</h1>
+                <p class="arcade-subtitle">English Vocabulary Battle</p>
+                <div class="high-score-display">
+                    <p>HIGH SCORE: <span id="startHighScore">0</span></p>
+                </div>
+                <div class="instructions">
+                    <h3>HOW TO PLAY:</h3>
+                    <p>🎯 An English word will appear at the top</p>
+                    <p>🎯 Enemy ships have Indonesian translations</p>
+                    <p>🎯 Shoot the ship with the CORRECT translation</p>
+                    <p>✓ Correct hit = +10 points</p>
+                    <p>✗ Wrong hit = -1 health</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Controls: Arrow Keys or WASD to move | SPACE to shoot | P to pause</p>
+                </div>
+                <button class="start-btn" onclick="startGame()">▶ START GAME</button>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="game-screen hidden">
+        <div class="game-header">
+            <div class="info">
+                <span>Score: <span id="score">0</span></span>
+                <span>Wave: <span id="wave">1</span></span>
+                <span>Health: <span id="health">3</span> ❤️</span>
+                <span>High Score: <span id="highScore">0</span></span>
+                <span>High Score: <span id="highScore">0</span></span>
+            </div>
+            <h1>Space Shooter</h1>
+            <button id="pauseBtn" class="pause-btn" onclick="togglePause()">⏸ PAUSE</button>
+            <div class="quiz-box">
+                <p>Find the English word:</p>
+                <p class="quiz-word" id="quizWord">Loading...</p>
+            </div>
+            <div class="info">
+                <span>Enemies: <span id="enemyCount">0</span></span>
+            </div>
+        </div>
+
+        <div id="gameContainer" class="game-container">
+            <div id="player" class="player"></div>
+        </div>
+
+        <div id="gameOverScreen" class="game-over-screen hidden">
+            <div class="game-over-content">
+                <h2>GAME OVER</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Wave Reached: <span id="waveReached">1</span></p>
+                <p id="correctAnswerDisplay" style="display:none; color: #ffff00; font-size: 1.2rem; margin: 15px 0;">Correct Answer: <span id="correctAnswer"></span></p>
+                <button onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+
+        <div id="pauseScreen" class="pause-screen hidden">
+            <div class="pause-content">
+                <h2>PAUSED</h2>
+                <button onclick="togglePause()">Resume (P)</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>← → atau A D untuk bergerak kiri-kanan</p>
+            <p>↑ ↓ atau W S untuk bergerak naik-turun</p>
+            <p>SPACE untuk menembak</p>
+        </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
